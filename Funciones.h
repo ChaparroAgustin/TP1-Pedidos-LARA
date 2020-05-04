@@ -132,11 +132,11 @@ void Listar_Todos()
         {
             cout<<"ID: "<<vec[x].ID<<endl;
             cout<<"Nombre: "<<vec[x].Nombre<<endl;
-            cout<<"Costo de Preparación: $"<<vec[x].Costo_Preparacion<<endl;
+            cout<<"Costo de PreparaciÃ³n: $"<<vec[x].Costo_Preparacion<<endl;
             cout<<"Valor de Venta: $"<<vec[x].Valor_Venta<<endl;
-            cout<<"Tiempo de Preparación: "<<vec[x].Tiempo_Preparacion<<" min"<<endl;
+            cout<<"Tiempo de PreparaciÃ³n: "<<vec[x].Tiempo_Preparacion<<" min"<<endl;
             cout<<"ID de Restaurante: "<<vec[x].IDRestaurante<<endl;
-            cout<<"Comisión: "<<vec[x].Comision<<"%"<<endl;
+            cout<<"ComisiÃ³n: "<<vec[x].Comision<<"%"<<endl;
             cout<<"ID de Categoria: "<<vec[x].IDCategoria<<endl;
             cout<<""<<endl;
         }
@@ -203,11 +203,11 @@ void Platos_X_Restaurante()
         {
             cout<<"ID: "<<vec[x].ID<<endl;
             cout<<"Nombre: "<<vec[x].Nombre<<endl;
-            cout<<"Costo de Preparación: $"<<vec[x].Costo_Preparacion<<endl;
+            cout<<"Costo de PreparaciÃ³n: $"<<vec[x].Costo_Preparacion<<endl;
             cout<<"Valor de Venta: $"<<vec[x].Valor_Venta<<endl;
-            cout<<"Tiempo de Preparación: "<<vec[x].Tiempo_Preparacion<<" min"<<endl;
+            cout<<"Tiempo de PreparaciÃ³n: "<<vec[x].Tiempo_Preparacion<<" min"<<endl;
             cout<<"ID de Restaurante: "<<vec[x].IDRestaurante<<endl;
-            cout<<"Comisión: "<<vec[x].Comision<<"%"<<endl;
+            cout<<"ComisiÃ³n: "<<vec[x].Comision<<"%"<<endl;
             cout<<"ID de Categoria: "<<vec[x].IDCategoria<<endl;
             cout<<""<<endl;
         }
@@ -236,12 +236,17 @@ void listar_Pedidos(Pedidos vec)
     {
         cout<<"ID: "<<vec.ID<<endl;
         cout<<"Nombre: "<<vec.Nombre<<endl;
-        cout<<"Costo de Preparación: $"<<vec.Costo_Preparacion<<endl;
+        cout<<"Costo de PreparaciÃ³n: $"<<vec.Costo_Preparacion<<endl;
         cout<<"Valor de Venta: $"<<vec.Valor_Venta<<endl;
-        cout<<"Tiempo de Preparación: "<<vec.Tiempo_Preparacion<<" min"<<endl;
+        cout<<"Tiempo de PreparaciÃ³n: "<<vec.Tiempo_Preparacion<<" min"<<endl;
         cout<<"ID de Restaurante: "<<vec.IDRestaurante<<endl;
-        cout<<"Comisión: "<<vec.Comision<<"%"<<endl;
+        cout<<"ComisiÃ³n: "<<vec.Comision<<"%"<<endl;
         cout<<"ID de Categoria: "<<vec.IDCategoria<<endl;
+    }
+    else
+    {
+        cout<<"No existe el ID ingresado";
+        getch();
     }
 }
 
@@ -299,7 +304,7 @@ void Modificar_Plato()
         cout<<""<<endl;
         cout<<"Ingrese Valor de Venta: $";
         cin>>vec.Valor_Venta;
-        cout<<"Ingrese tiempo de preparación: ";
+        cout<<"Ingrese tiempo de preparaciÃ³n: ";
         cin>>vec.Tiempo_Preparacion;
         if(Sobreescribir_pedidos(vec,pos))
         {
@@ -405,7 +410,7 @@ bool CargarPlatos(Pedidos *vec)
     cin.getline(vec->Nombre,50);
     if(strlen(vec->Nombre)<=0)
         return false;
-    cout<<"Ingrese Costo de Preparación: $";
+    cout<<"Ingrese Costo de PreparaciÃ³n: $";
     cin>>vec->Costo_Preparacion;
     if(vec->Costo_Preparacion<0)
         return false;
@@ -413,7 +418,7 @@ bool CargarPlatos(Pedidos *vec)
     cin>>vec->Valor_Venta;
     if(vec->Valor_Venta<0 || vec->Valor_Venta<vec->Costo_Preparacion)
         return false;
-    cout<<"ingrese Tiempo de Preparación: ";
+    cout<<"ingrese Tiempo de PreparaciÃ³n: ";
     cin>>vec->Tiempo_Preparacion;
     if(vec->Tiempo_Preparacion<0)
         return false;
@@ -421,7 +426,7 @@ bool CargarPlatos(Pedidos *vec)
     cin>>vec->IDRestaurante;
     if(vec->IDRestaurante<0)
         return false;
-    cout<<"Ingrese Comisión del Restaurante: ";
+    cout<<"Ingrese ComisiÃ³n del Restaurante: ";
     cin>>vec->Comision;
     if(vec->Comision<0 || vec->Comision>100)
         return false;
@@ -442,7 +447,7 @@ void Menu_2()
     {
         cls();
         cout<<"|-----------------------------|"<<endl;
-        cout<<"|         MENÚ PLATOS         |"<<endl;
+        cout<<"|         MENÃš PLATOS         |"<<endl;
         cout<<"|-----------------------------|"<<endl;
         cout<<"| 1) NUEVO PLATO              |"<<endl;
         cout<<"| 2) MODIFICAR PLATO          |"<<endl;
@@ -451,9 +456,9 @@ void Menu_2()
         cout<<"| 5) LISTAR TODOS LOS PLATOS  |"<<endl;
         cout<<"| 6) ELIMINAR PLATO           |"<<endl;
         cout<<"|-----------------------------|"<<endl;
-        cout<<"| 0) VOLVER AL MENÚ PRINCIPAL |"<<endl;
+        cout<<"| 0) VOLVER AL MENÃš PRINCIPAL |"<<endl;
         cout<<"|-----------------------------|"<<endl<<endl;
-        cout<<"Opción: "<<endl;
+        cout<<"OpciÃ³n: "<<endl;
         cin>>opcion;
         switch(opcion)
         {
@@ -494,7 +499,7 @@ void Menu_2()
         break;
         default:
         {
-            cout<<"Opción incorrecta"<<endl;
+            cout<<"OpciÃ³n incorrecta"<<endl;
             getch();
         }
         break;
