@@ -304,6 +304,11 @@ void Modificar_Plato()
         cout<<""<<endl;
         cout<<"Ingrese Valor de Venta: $";
         cin>>vec.Valor_Venta;
+        if(vec.Valor_Venta<vec.Costo_Preparacion)
+        {
+            cout<<"El valor ingresado es menor al costo de preparacion,";
+            return;
+        }
         cout<<"Ingrese tiempo de preparación: ";
         cin>>vec.Tiempo_Preparacion;
         if(Sobreescribir_pedidos(vec,pos))
